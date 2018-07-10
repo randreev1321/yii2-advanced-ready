@@ -62,17 +62,12 @@ RUN printf "\n" | pecl install \
 
 # Environment settings
 ENV PHP_USER_ID=33 \
-#    APACHE_RUN_USER=root \
-#    APACHE_RUN_GROUP=root \
     PHP_ENABLE_XDEBUG=0 \
     PATH=/app:/app/vendor/bin:/root/.composer/vendor/bin:$PATH \
     TERM=linux \
     VERSION_PRESTISSIMO_PLUGIN=^0.3.7 \
     COMPOSER_ALLOW_SUPERUSER=1 \
     VERSION_COMPOSER_ASSET_PLUGIN=^1.4
-
-# Add configuration files
-#COPY image-files/ /
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- \
